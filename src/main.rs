@@ -12,8 +12,19 @@ fn main() {
     let mut guess = String::new();
     io::stdin().read_line(&mut guess).expect("Failed to readline");
     println!("You guessed: {}", guess);
-    generating_new_number_rand();
 
+    let guess: u32 = guess.trim().parse()
+          .expect("Please type a number");
+    let generating_random = rand::thread_rng(). gen_range(1,134);
+    println!("The random number is {}",generating_random);
+    //Here we compare the latest version to the next
+    match guess.cmp(&generating_random){
+        Ordering::Less => {println!("Too small!");}
+        Ordering::Greater => {println!("Too big!");}
+        Ordering::Equal => {println!("You win!");}
+    }
+    //Finally we call the intermidate function
+    //generating_new_number_rand();
 }
 
 //Here we define the rest of utility functions
