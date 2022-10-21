@@ -5,6 +5,10 @@ use rand::Rng;
 use std::cmp::Ordering;
 
 fn main() {
+    /*
+    The next steps is to introduce the generating with a loop,
+    inside of the main form .
+    */
     println!("Hello, world!");
     secondary_main();
 
@@ -25,6 +29,8 @@ fn main() {
     }
     //Finally we call the intermidate function
     //generating_new_number_rand();
+    let number = five();
+    println!("The number is {}", number);
 }
 
 //Here we define the rest of utility functions
@@ -42,4 +48,12 @@ fn generating_new_number_rand(){
     */
     let generating_new_number = rand::thread_rng().gen_range(1,10);
     println!("The generatin number is: {} ",generating_new_number);
+}
+
+
+fn five() -> i32{
+    /*
+    This function is to generate the returning statment.
+    */
+    return 5;
 }
